@@ -1,0 +1,87 @@
+@import "reset.css";
+@import "form.css";
+@import "dialog.css";
+@import "selector.css";
+@import "verify.css";
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: system-ui;
+  font-size: 14px;
+  font-weight: lighter;
+
+  background: #f1f2f6;
+}
+body form {
+  padding-bottom: 52px;
+}
+
+body.forbidden {
+  overflow: hidden;
+}
+
+.card {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+}
+
+.form__element {
+  padding: 5px 0 10px;
+}
+
+.term .form__checkbox {
+  position: absolute;
+}
+
+.term .form__term-content {
+  padding-left: 30px;
+}
+
+.next {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 49px;
+  border: 0;
+  font-size: 16px;
+  color: #fff;
+  background: #4976e6;
+}
+
+.next:disabled {
+  background: #ccc;
+}
+
+.highlight {
+  color: #4976e6;
+}
+
+.disabled {
+  color: rgb(194, 194, 194);
+}
+
+
+.form__input-active {
+  border-color: rgb(73, 118, 230);
+  background: rgb(224, 232, 250);
+}
+
+.selector__item.active {
+  color: #4976e6;
+}
+
+.inject-url {
+  color: #4976e6;
+  text-decoration: underline;
+}

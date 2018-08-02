@@ -1,0 +1,33 @@
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+.dialog__container {
+  display: table-cell;
+  padding: 0 25px;
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+  background-clip: content-box;
+}
+
+.dialog__footer button {
+  height: 40px;
+  font-size: 14px;
+}
+
+.dialog__cancel {
+  background-color: rgb(234, 234, 234);
+  color: rgb(102, 102, 102);
+}
+
+.dialog__verify {
+  background-color: rgb(73, 118, 230);
+  color: #fff;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>FXGO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="format-detection" content="telephone=no">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/jquery-ui-1.12.1.min.js"></script>
+    <script src="script/common.js"></script>
+    <script src="script/lang.js"></script>
+    <script src="script/plugin/i18n.js"></script>
+    <script src="script/plugin/dialog.js"></script>
+    <script src="script/plugin/scrolllist.js"></script>
+    <script src="script/plugin/selectList.js"></script>
+    <link rel="stylesheet" href="style/default.css">
+    <link rel="stylesheet" href="style/questionnaire.css">
+  </head>
+  <body>
+    <div class="questionnaire">
+      <form>
+        <div id="profile" class="card">
+        </div>
+        <!-- <div class="form__element select-list" data-type="selctlist"></div>
+        <div class="form__element select-list" data-type="selctlist"></div> -->
+      </form>
+      <div class="questionnaire__footer">
+        <div class="flex-box btn-hide">
+          <button class="btn-light flex-item-1" data-lang="s42"></button>
+          <button class="btn-blue flex-item-1" data-lang="s43"></button>
+        </div>
+        <div class="flex-box">
+          <button id="previous" class="btn-light flex-item-1" data-lang="s42"></button>
+          <button id="next" disabled class="btn-blue flex-item-1" data-lang="s20"></button>
+        </div>
+      </div>
+    </div>
+    <div id="error-dialog" class="error-dialog"></div>
+    <script src="./script/questionnaire.js"></script>
+  </body>
+</html>

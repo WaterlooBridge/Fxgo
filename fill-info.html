@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="Cache-Control" content="no-transform ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>神秘礼物</title>
+  <link rel="stylesheet" href="./style/base.css" type="text/css">
+  <link rel="stylesheet" href="./style/dialog.css">
+</head>
+<body>
+	<div class="ui-containers has-footer">
+		<div class="gift-title">
+			神秘礼物<span id="gift">(红酒)</span>将邮寄到一下地址：
+		</div>
+ 		<div class="ui-content">
+		  <ul class="ui-form">
+			<li>
+			  <div class="ui-form-list">收件人</div>
+			  <input type="text" placeholder="请填写" name="contactName" value="">
+			  <div class="contact"><span id="self">自己</span>|<span id="contact">通讯录</span></div>
+			</li>
+			<li>
+			  <div class="ui-form-list">联系电话</div>
+			  <input type="text" placeholder="请填写" name="contactPhone" value="">
+			</li>
+			  <li>
+				  <div class="ui-form-list">省份</div>
+				  <input type="text" placeholder="请填写" name="province" value="">
+			  </li>
+			  <li>
+				  <div class="ui-form-list">城市</div>
+				  <input type="text" placeholder="请填写" name="city" value="">
+			  </li>
+			<li>
+			  <div class="ui-form-list">详细地址</div>
+			  <input placeholder="如地区、街道、楼牌号等" name="detailAddress">
+			</li>
+			</ul>
+ 		</div>
+	</div>
+  <div class="ui-footer fill-footer">
+    <button type="button" class="ui-btn fill-btn confirm-btn">保存并提交</button>
+  </div>
+  <div id="error-dialog" class="error-dialog"></div>
+  <script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./script/base.js"></script>
+    <script type="text/javascript">
+        $(function(){
+           var params = getRequest();
+            var userId=params.userId;
+            var token = params.tradeToken;
+			var selfName, selfPhone;
+           if(token){
+               var data = {userId:userId,tradeToken:token};
+               $.getJSON(domain+"app/user/address/info/jsonp?callback=?",data,function(data){
+                   if(data.success) {
+                       $.each(data.data,function(key,value){
+                           $("[name='"+key+"']").val(value);
+                       });
+					   selfName = data.data.contactName;
+					   selfPhone = data.data.contactPhone;
+                   }
+                });
+            }
+            var url="app/user/address/add/jsonp";
+//            if(aid)
+//            {
+//                url = "app/user/address/update/jsonp";
+//            }
+            var param  = replaceParamVal("ad");
+            $('body').on('click', '.confirm-btn', function () {
+                if(!userId){
+                    errorDialog("无效的请求地址！");
+                    return;
+                }
+                var  contactName = $("[name='contactName']").val();
+                var  contactPhone = $("[name='contactPhone']").val();
+                var  province = $("[name='province']").val();
+                var  city = $("[name='city']").val();
+                var  detailAddress = $("[name='detailAddress']").val();
+                if(!contactName)
+                {
+                    errorDialog("请填写收件人");
+                    return;
+                }
+                if(!contactPhone)
+                {
+                    errorDialog("请填写收件人电话");
+                    return;
+                }
+                if(!province)
+                {
+                    errorDialog("请填写省份");
+                    return;
+                }
+                if(!city)
+                {
+                    errorDialog("请填写城市");
+                    return;
+                }
+                if(!detailAddress)
+                {
+                    errorDialog("请填写详细地址");
+                    return;
+                }
+                $('body').append('<div class="loading"></div>')
+                var params={userId:userId,contactName:contactName,contactPhone:contactPhone,province:province
+                    ,city:city,detailAddress:detailAddress};
+                $.getJSON(domain+url+"?callback=?",params,function(data){
+                    if(data.success)
+                    {
+                        errorDialog("添加成功！");
+                        if(window.inject && window.inject.finish)
+							window.inject.finish();
+                    }else{
+                        errorDialog(data.errorInfo);
+                    }
+                    $('.loading').remove();
+                });
+            });
+			
+			$('#self').click(function(){
+			$("[name='contactName']").val(selfName);
+			$("[name='contactPhone']").val(selfPhone);
+			});
+
+			$('#contact').click(function(){
+				window.location.href="contact://";
+			});
+
+        });
+		function setContactInfo(name,number) {
+			$("[name='contactName']").val(name);
+			$("[name='contactPhone']").val(number);
+		}
+		
+		function errorDialog (err) {
+		  $('#error-dialog').html(err)
+		  $('#error-dialog').css('height', '40px')
+		  setTimeout(function () {
+			$('#error-dialog').css('height', '0px')
+		  }, 2500)
+		}
+    </script>
+
+
+</body></html>

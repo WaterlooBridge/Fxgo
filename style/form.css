@@ -1,0 +1,70 @@
+/* commone style */
+.form__element {
+  position: relative;
+}
+
+.form__label {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.form__input {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 5px;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+}
+
+.form__input.active {
+  background: #e0e8fa;
+  border-color: #4976e6;
+}
+
+.form__input input {
+  -webkit-box-flex: 1;
+  flex: 1;
+  height: 30px;
+  font-size: 14px;
+}
+
+/* verify element */
+.form__verify-button {
+  width: 50px;
+  font-size: 14px;
+}
+
+/* select */
+.form__arrow-holder {
+  width: 20px;
+  height: 9px;
+  background: url(../images/arrow-down.png) center center no-repeat;
+  background-size: 12px;
+}
+
+/* checkbox */
+.form__checkbox input {
+  display: none;
+}
+
+.form__checkbox .fake-input{
+  display: inline-block;
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  background: url(../images/checkbox-outline.png) center center no-repeat;
+}
+
+.form__checkbox input:checked + .fake-input {
+  background: url(../images/checkbox-checked.png) center center no-repeat;
+}
+
+.arrow-right {
+  background: url(../images/arrow-right.png) center center no-repeat;
+}

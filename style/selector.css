@@ -1,0 +1,66 @@
+.selector {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  background: #fcfcfc;
+  height: auto;
+  text-align: center;
+  z-index: 20;
+  box-shadow: 0px 0px 10px #999;
+}
+
+.selector::before {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.selector__controls {
+  height: 50px;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+
+  background: rgb(234, 234, 234);
+}
+
+.selector__controls > div {
+  -webkit-box-flex: 1;
+  flex: 1;
+  padding: 10px 20px;
+}
+
+.selector__cancel {
+  text-align: left;
+  color: #999;
+}
+
+.selector__confirm {
+  text-align: right;
+  color: #4976e6;
+}
+
+.selector__columns {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.selector__column {
+  -webkit-box-flex: 1;
+  flex: 1;
+}

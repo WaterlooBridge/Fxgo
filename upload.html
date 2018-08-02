@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>upload document</title>
+  <meta http-equiv="Cache-Control" content="no-transform " />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" href="./style/reset.css">
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <script src="lib/jquery-ui-1.12.1.min.js"></script>
+  <script src="script/common.js"></script>
+  <script src="script/lang.js"></script>
+  <script src="script/plugin/i18n.js"></script>
+  <script src="script/plugin/dialog.js"></script>
+  <link rel="stylesheet" href="style/dialog.css">
+  <link rel="stylesheet" href="./style/upload.css">
+</head>
+<body>
+  <div class="title" data-lang="s30"></div>
+  <div class="wrap">
+    <div class="body-title" data-lang="s31"></div>
+    <div class="body-min-title" id="credentials-details" data-lang="s32"></div>
+    <div class="radio-wrap">
+      <div id="passport" class="passport">
+        <i class="radio-active"></i>
+        <span data-lang="s33"></span>
+      </div>
+      <div id="id-card" class="id-card">
+        <i class="radio-i"></i>
+        <span data-lang="s34"></span>
+      </div>
+    </div>
+    <div id="id-card-update" class="update-wrap">
+      <div id="id-card-front">
+        <img class="plus-i" src="./images/plus.png" alt="">
+        <p data-lang="s36"></p>
+      </div>
+      <div id="id-card-back">
+        <img class="plus-i" src="./images/plus.png" alt="">
+        <p data-lang="s37"></p>
+      </div>
+    </div>
+    <div id="passport-update" class="passport-update">
+      <div id="passport-update-img">
+        <img class="plus-i" src="./images/plus.png" alt="">
+        <p data-lang="s35"></p>
+      </div>
+    </div>
+  </div>
+  <div class="residence-wrap">
+    <div class="body-title" data-lang="s40"></div>
+    <div class="body-min-title" id="residence-details" data-lang="s32"></div>
+    <div id="residence-update" class="residence-update">
+      <div id="residence-update-img">
+        <img class="plus-i" src="./images/plus.png" alt="">
+        <p data-lang="s91"></p>
+      </div>
+    </div>
+  </div>
+  <div class="button-wrap">
+    <div id="previous" class="previous" data-lang="s42"></div>
+    <div id="next" class="next disabled" data-lang="s43"></div>
+  </div>
+  <script src="./script/upload.js"></script>
+</body>
+</html>

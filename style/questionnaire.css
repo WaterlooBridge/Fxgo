@@ -1,0 +1,129 @@
+body {
+  padding-bottom: 50px;
+  background: #fff;
+}
+
+.questionnaire {
+  height: 100%;
+  overflow: auto;
+  font-size: 13px;
+}
+
+.questionnaire .form__select {
+  padding: 0 10px;
+}
+
+.question__header {
+  position: relative;
+  padding-left: 16px;
+}
+
+.question__num {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  display: block;
+  width: 30px;
+  text-align: right;
+}
+
+.select__selector {
+  position: relative;
+  min-height: 43px;
+  padding: 0 30px 0 10px;
+  border: 1px solid #dddee2;
+  border-radius: 2px;
+}
+
+.selected__item {
+  line-height: 43px;
+}
+
+.selected__item:not(:first-child) {
+  border-top: 1px solid #dddee2;
+}
+
+.select__selector::after {
+  position: absolute;
+  width: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '';
+  background: url(../images/arrow-down.png) center center no-repeat;
+}
+
+.disabled .select__selector::after {
+  display: none;
+}
+
+.select__item {
+  position: relative;
+  line-height: 43px;
+  padding-left: 10px;
+  border: 1px solid #dddee2;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.select__item-selected {
+  border-color: rgb(73, 118, 230);
+  background: rgb(224, 232, 250);
+}
+
+.select__item-selected::after {
+  position: absolute;
+  width: 35px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '';
+  background: url(../images/check.png) center center no-repeat;
+}
+
+
+.questionnaire__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.flex-box {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item-1 {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.btn-hide {
+  display: none;
+}
+
+.btn-light {
+  height: 49px;
+  border-top: 1px solid #4976e6;
+  font-size: 16px;
+  color: #4976e6;
+  background: #fff;
+}
+
+.btn-blue {
+  height: 49px;
+  border: 0;
+  font-size: 16px;
+  color: #fff;
+  background: #4976e6;
+}
+
+#next:disabled {
+  background: #ccc;
+}

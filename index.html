@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>FXGO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="format-detection" content="telephone=no">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/jquery-ui-1.12.1.min.js"></script>
+    <script src="script/common.js"></script>
+    <script src="script/lang.js"></script>
+    <script src="script/plugin/i18n.js"></script>
+    <script src="script/plugin/dialog.js"></script>
+    <script src="script/plugin/scrolllist.js"></script>
+    <script src="script/plugin/selector.js"></script>
+    <script src="script/plugin/datepicker.js"></script>
+    <script src="script/verifyEmail.js?a=1"></script>
+    <link rel="stylesheet" href="style/default.css">
+  </head>
+  <body>
+    <form>
+      <div id="profile" class="card">
+        <div class="form__element term">
+          <label class="form__checkbox">
+            <input type="checkbox" checked="true" name="usCitizen">
+            <span class="fake-input"></span>
+          </label>
+          <div class="form__term-content" data-lang="s16"></div>
+        </div>
+      </div>
+      <div class="card">
+        <p data-lang="s17" class="i18n-transaction"></p>
+        <div class="form__element term">
+          <label class="form__checkbox">
+            <input type="checkbox" checked="true">
+            <span class="fake-input"></span>
+          </label>
+          <div class="form__term-content" data-lang="s18"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="form__element term">
+          <label class="form__checkbox">
+            <input type="checkbox" checked="true">
+            <span class="fake-input"></span>
+          </label>
+          <div class="form__term-content i18n-clause" data-lang="s19"></div>
+        </div>
+      </div>
+    </form>
+    <button class="next" disabled data-lang="s43"></button>
+    <div id="error-dialog" class="error-dialog"></div>
+    <script src="./script/index.js?a=1"></script>
+  </body>
+</html>
