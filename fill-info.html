@@ -47,6 +47,7 @@
   </div>
   <div id="error-dialog" class="error-dialog"></div>
   <script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./script/webview-js-bridge.js"></script>
   <script type="text/javascript" src="./script/base.js"></script>
     <script type="text/javascript">
         $(function(){
@@ -113,9 +114,10 @@
                 $.getJSON(domain+url+"?callback=?",params,function(data){
                     if(data.success)
                     {
-                        errorDialog("添加成功！");
-                        if(window.inject && window.inject.finish)
-							window.inject.finish();
+                        WebViewJavascriptBridge.callHandler('alert', '提交成功，仓库正在打包\n稍后可在消息中心或联系客服查询进度', function(){
+							if(window.inject && window.inject.finish)
+								window.inject.finish();
+						});
                     }else{
                         errorDialog(data.errorInfo);
                     }
