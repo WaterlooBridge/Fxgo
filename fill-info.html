@@ -114,10 +114,14 @@
                 $.getJSON(domain+url+"?callback=?",params,function(data){
                     if(data.success)
                     {
-                        WebViewJavascriptBridge.callHandler('alert', '提交成功，仓库正在打包\n稍后可在消息中心或联系客服查询进度', function(){
-							if(window.inject && window.inject.finish)
-								window.inject.finish();
-						});
+						
+						if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && window.inject && window.inject.alert)
+							window.inject.alert();
+						else
+							WebViewJavascriptBridge.callHandler('alert', '提交成功，仓库正在打包\n稍后可在消息中心或联系客服查询进度', function(){
+								if(window.inject && window.inject.finish)
+									window.inject.finish();
+							});
                     }else{
                         errorDialog(data.errorInfo);
                     }
