@@ -1,4 +1,4 @@
-var domain = "http://m-fxgo.cp1h.com/";
+var domain = "http://m.zyxwxm.com/";
 //select 效果
 var joptiondata;
 $(".e-option").change(function(){
